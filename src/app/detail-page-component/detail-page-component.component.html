@@ -1,0 +1,84 @@
+<div class="detail_page_container">
+    
+    <div class="detail_page_card_inner" *ngIf="userDetail !== undefined && editCheck ==false" >
+        <div class="closeBtn" (click)="handleCloseBtn()">
+            x
+        </div>
+        <div class="detail_page_card_header">
+            <img class="profile_img" src="https://i.imgur.com/bDLhJiP.jpg" alt="profile_img">
+        </div>
+        <div class="detail_page_upper_body">
+            <div class="detail_page_name" >
+                {{userDetail?.name}}
+            </div>
+            <div class="detail_page_body">
+                {{userDetail.email}}
+            </div>
+            <div class="detail_page_address">
+                
+                {{userDetail?.address}}
+            </div>
+            <div class="detail_page_phone">
+               {{userDetail?.phone}}
+            </div>
+        </div>
+        <div class="detail_page_card_footer">
+            <div class="edit_btn btn" (click)="handleEdit()">
+                Edit
+            </div>
+            <div class="delete_btn btn" (click)="handleDelete()">
+                Delete
+            </div>
+            <div class="editBox" *ngIf="editCheck !== false">
+                Edit functionality is on
+            </div>
+
+        </div>
+        
+    </div>
+    <div class="detail_page_card_inner" *ngIf="userDetail !== undefined && editCheck === true" >
+        <div class="detail_page_card_header">
+            <img class="profile_img" src="https://i.imgur.com/bDLhJiP.jpg" alt="profile_img">
+        </div>
+        <div class="detail_page_upper_body">
+            <div class="form_page_name form_page" >
+                <label for="name">Name</label>
+                <div class="old_content"> {{userDetail?.name}}</div>
+                <input name="name" type="text" [(ngModel)]="nameField" ngDefaultControl>
+                
+            </div>
+            <div class="form_page_body form_page">
+                <label for="email">Email</label>
+                <div class="old_content"> {{userDetail?.email}}</div>
+                <input type="email" name="email"value= {{userDetail.email}} [(ngModel)]="emailField" ngDefaultControl>
+               
+            </div>
+            <div class="form_page_address form_page" [(ngModel)]="addressField" ngDefaultControl>
+                <label for="address">Address</label>
+                <div class="old_content"> {{userDetail?.address}}</div>
+                <textarea name="address" id="" cols="30" rows="2" >
+                    
+                </textarea>
+                
+            </div>
+            <div class="form_page_phone form_page" [(ngModel)]="mobileField" ngDefaultControl>
+                <label for="mobile">Mobile</label>
+                <div class="old_content">{{userDetail?.phone}}</div>
+                <input name= "mobile"type='tel'>
+               
+            </div>
+        </div>
+        <div class="detail_page_card_footer">
+            <div class="close_btn btn" (click)="handleEdit()" >
+               close
+            </div>
+            <div class="submit_btn btn" (click)="handleUpdate()">
+                Update
+            </div>
+
+        </div>
+        
+    </div>
+
+
+</div>

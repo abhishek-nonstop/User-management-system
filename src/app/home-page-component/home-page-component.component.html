@@ -1,0 +1,50 @@
+
+<div class="home_page_header">
+    <div class="home_page_header_title">
+        Simple Crude Operation...
+    </div>
+   
+    <div class="home_page_header_btn button btn" (click)='handleClick()'>
+        Add New User
+    </div>
+</div>
+<div class="home_page_body">
+    <div class="form_header header_nav">
+        <div class="header_column">
+            Name
+        </div>
+        
+        <div class="header_column">
+           Id
+        </div>
+        <div class="header_column">
+            Email
+         </div>
+         <div class="header_column">
+            Gender
+         </div>
+        </div>
+        <div class="form_body" >
+            <div class="form_body_row" *ngFor='let product of products'>
+            <div class="form_body_item name"><a [routerLink]="['/detail',product.id]">{{product.name}}</a></div>
+            <div class="form_body_item username"><a [routerLink]="['/detail',product.id]">{{product.id}}</a></div>
+            <div class="form_body_item email"><a [routerLink]="['/detail',product.id]">{{product.email}}</a></div>
+            <div class="form_body_item gender"><a [routerLink]="['/detail',product.id]">{{product.gender}}</a></div>
+            </div>
+            
+            
+        
+        
+        </div>
+</div>
+<div class="home_page_button">
+
+
+
+
+
+
+</div>
+
+  
+  
