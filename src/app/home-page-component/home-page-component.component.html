@@ -4,7 +4,7 @@
         Simple Crude Operation...
     </div>
    
-    <div class="home_page_header_btn button btn" (click)='handleClick()'>
+    <div class="home_page_header_btn button btn" (click)='handleFormOpen()'>
         Add New User
     </div>
 </div>
@@ -37,13 +37,32 @@
         
         </div>
 </div>
-<div class="home_page_button">
-
-
-
-
-
-
+<div class="home_page_form_wrapper" *ngIf="openForm">
+    
+    <div class="home_page_form_container">
+        <div class="closeBtn" (click)="handleCloseBtn()">
+            x
+        </div>
+        <label for="name" >Enter Your name</label>
+        <input type="text" name="address" [(ngModel)]="nameField" ngDefaultControl/>
+        <label for="email">Enter Your Email</label>
+        <input type="email" name="email" [(ngModel)]="emailField" ngDefaultControl />
+        <label for="phone">Enter Your Mobile Number</label>
+        <input type="text" name="phone" [(ngModel)]="mobileField" ngDefaultControl />
+        <label for="company">Enter Your Company Name</label>
+        <input type="text" name="company" [(ngModel)]="companyField" ngDefaultControl/>  
+        <label for="address">Enter Your Address</label>
+        <input type="text" name="Address" [(ngModel)]="addressField" ngDefaultControl/>
+        <div class="form_btns">
+            <div class="edit_btn btn" (click)="handleSubmit()">
+                Submit
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    
 </div>
 
   
